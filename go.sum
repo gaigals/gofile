@@ -1,0 +1,4 @@
+github.com/gaigals/gotags v0.0.0-20221205080502-490bd6fa719d h1:ozwt+vOkYfb+3usVRjH32ZDUMwHUEmDkwNCwxBC01Fo=
+github.com/gaigals/gotags v0.0.0-20221205080502-490bd6fa719d/go.mod h1:1N/Z7wNSbXQcIc8pRZZDILZoJ2CacEnyDY6TKMPMcmc=
+github.com/spf13/cast v1.5.0 h1:rj3WzYc11XZaIZMPKmwP96zkFEnnAmV8s6XbB2aY32w=
+github.com/spf13/cast v1.5.0/go.mod h1:SpXXQ5YoyJw6s3/6cMTQuxvgRl3PCJiyaX9p6b155UU=
