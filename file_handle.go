@@ -52,7 +52,7 @@ func ValidatePrems(value string) error {
 	return nil
 }
 
-func TagProcessor(field gotags.FieldData) error {
+func TagProcessor(field gotags.Field) error {
 	// Casting validation happens at ValidatePrems().
 	prem := os.FileMode(cast.ToUint32(field.KeyValue(tagKeyPermission)))
 	if prem == 0 {
@@ -69,11 +69,11 @@ func TagProcessor(field gotags.FieldData) error {
 		return err
 	}
 
-	return field.ApplySelfValue(*fileHandle)
+	return field.SetValue(*fileHandle)
 }
 
 func NewFileHandleStruct(data any) error {
-	_, err := tagSettings.FieldData(data)
+	_, err := tagSettings.ParseStruct(data)
 	if err != nil {
 		return err
 	}
