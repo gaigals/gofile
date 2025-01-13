@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"path"
-	"reflect"
 
 	"github.com/gaigals/gotags"
 	"github.com/spf13/cast"
@@ -19,21 +18,19 @@ const (
 )
 
 var (
-	keyPath       = gotags.NewKey(tagKeyPath, false, true, nil, reflect.Struct)
-	keyTmp        = gotags.NewKey(tagKeyTmp, true, false, nil, reflect.Struct)
-	keyContent    = gotags.NewKey(tagKeyContent, false, false, nil, reflect.Struct)
-	keyPermission = gotags.NewKey(tagKeyPermission, false, false, ValidatePrems, reflect.Struct)
+	keyPath       = gotags.NewKey(tagKeyPath, false, true, nil)
+	keyTmp        = gotags.NewKey(tagKeyTmp, true, false, nil)
+	keyContent    = gotags.NewKey(tagKeyContent, false, false, nil)
+	keyPermission = gotags.NewKey(tagKeyPermission, false, false, ValidatePrems)
 )
 
-var (
-	tagSettings = gotags.NewTagSettingsDefault(
-		"file",
-		TagProcessor,
-		keyPath,
-		keyTmp,
-		keyContent,
-		keyPermission,
-	)
+var tagSettings = gotags.NewTagSettingsDefault(
+	"file",
+	TagProcessor,
+	keyPath,
+	keyTmp,
+	keyContent,
+	keyPermission,
 )
 
 type FileHandle struct {
